@@ -40,15 +40,15 @@ public class Game{
 
   public static String CheckBoard(ArrayList<ArrayList<String>> board){
 
-    return "No winner;
+    return "No winner";
   }
 
   public static boolean CheckWin(ArrayList<ArrayList<String>> board, String selection){
 
-		// Convert the selection to uppercase
-		selection = selection.toUpperCase();
+	// Convert the selection to uppercase
+	selection = selection.toUpperCase();
 
-		// Make sure the selection is valid
+	// Make sure the selection is valid
 		if(!(selection.equals("X") || selection.equals("O")) return false;
 
 		// Check for a full row
