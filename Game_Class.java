@@ -54,7 +54,7 @@ public class Game{
 		if(!(selection.equals("X") || selection.equals("O"))) return false;
 
 		// Check for a full row
-  	for(int i = 0; i < game.size(); i++){
+  	for(int i = 0; i < game.size(); i++){ 
     		
     	// Get the row
     	ArrayList<String> row = game.get(i);
