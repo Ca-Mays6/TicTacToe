@@ -49,7 +49,7 @@ public class Game{
 	selection = selection.toUpperCase();
 
 	// Make sure the selection is valid 
-	if(!(selection.equals("X") || selection.equals("O")) return false;
+	if(!(selection.equals("X") || selection.equals("O"))) return false;
 
 		// Check for a full row
     for(int i = 0; i < game.size(); i++){
