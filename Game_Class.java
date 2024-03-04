@@ -48,7 +48,7 @@ public class Game{
 	// Convert the selection to uppercase
 	selection = selection.toUpperCase();
 
-	// Make sure the selection is valid
+	// Make sure the selection is valid 
 	if(!(selection.equals("X") || selection.equals("O")) return false;
 
 		// Check for a full row
