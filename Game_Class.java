@@ -71,7 +71,6 @@ public class Game{
     		
     	// Check if the row is a winning pattern
     	if(streak == row.size()) return true;
-
 		}
 	}
 }
