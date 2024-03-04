@@ -45,14 +45,14 @@ public class Game{
 
   public static boolean CheckWin(ArrayList<ArrayList<String>> board, String selection){
 
-	// Convert the selection to uppercase
-	selection = selection.toUpperCase();
+		// Convert the selection to uppercase
+		selection = selection.toUpperCase();
 
-	// Make sure the selection is valid 
-	if(!(selection.equals("X") || selection.equals("O"))) return false;
+		// Make sure the selection is valid 
+		if(!(selection.equals("X") || selection.equals("O"))) return false;
 
 		// Check for a full row
-    for(int i = 0; i < game.size(); i++){
+  	for(int i = 0; i < game.size(); i++){
     		
     	// Get the row
     	ArrayList<String> row = game.get(i);
