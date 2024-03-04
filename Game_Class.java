@@ -64,7 +64,7 @@ public class Game{
     	for(int v = 0; v < row.size(); v++){
     			
     		// Check if string equals the selection
-    		if(row.get(v).equals(selection)){
+    		if(row.get(v).equals(selection)){ 
     			streak++;
     		}
     	}
