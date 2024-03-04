@@ -14,7 +14,7 @@ public class Game{
     // The size of the board
     boardSize = size;
 
-    // The board of itself
+    // The board of itself 
     ArrayList<ArrayList<String>> board = new ArrayList<ArrayList<String>>();
   }
 
