@@ -1,6 +1,5 @@
 import java.io.*;
 import java.io.*;
-import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -23,7 +22,7 @@ public class Game{
   public static boolean UpdateBoard(int row, int col, String symbol){
 
     // Make sure it is a valid placement
-    if(!CheckValidPlacement(row, col, symbol)) return false;
+    if(!CheckValidPlacement(row, col)) return false;
 
     // Place the symbol
     
@@ -31,21 +30,54 @@ public class Game{
     return true;
   }
 
-  public static boolean CheckValidPlacement(int row, int col, String symbol){
+  public static boolean CheckValidPlacement(ArrayList<ArrayList<String>> game, int row_, int col){
+
+	// Get the spot on the board
+	String spot = game.get(row_).get(col);
+
+	// Make sure the spot is empty
+	if(!spot.equals("")) return false;
+
+	int x = 0;
+    int o = 0;
+    	
+    // Loop through the game
+    for(int i = 0; i < game.size(); i++){
+    		
+    	// Get the row
+    	ArrayList<String> row = game.get(i);
+    		
+    	// Loop through the row
+    	for(int v = 0; v < row.size(); v++){
+    			
+    		// Check for an O
+			if(row.get(v).equals("O")) o++;
+				
+			// Check for an X
+			if(row.get(v).equals("X")) x++;
+    	}
+    }
+    	
+    // Check if turns were not taken
+    if(x > o + 1) return false;
+    if(o >= x + 1) return false;
+    	
+    // Check if the first player played X
+    if(o > x) return false;
 
     return true;
   }
 
   // || WIN CONDITIONS ||
 
-  public static String CheckBoard(ArrayList<ArrayList<String>> board){
+  public static String CheckBoard(ArrayList<ArrayList<String>> game){
 
-		String returnStatement = "No winner";
+	String returnStatement = "No winner";
 		
     return returnStatement;
   }
 
-  public static boolean CheckWin(ArrayList<ArrayList<String>> board, String selection){
+  public static boolean CheckWin(ArrayList<ArrayList<String>> game, String selection){
 
 	// Convert the selection to uppercase
 	selection = selection.toUpperCase();
