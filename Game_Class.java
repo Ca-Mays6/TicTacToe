@@ -47,13 +47,13 @@ public class Game{
 
   public static boolean CheckWin(ArrayList<ArrayList<String>> board, String selection){
 
-		// Convert the selection to uppercase
-		selection = selection.toUpperCase();
+	// Convert the selection to uppercase
+	selection = selection.toUpperCase();
 
-		// Make sure the selection is valid 
-		if(!(selection.equals("X") || selection.equals("O"))) return false;  
+	// Make sure the selection is valid 
+	if(!(selection.equals("X") || selection.equals("O"))) return false;  
 
-		// Check for a full row
+	// Check for a full row
   	for(int i = 0; i < game.size(); i++){ 
     		
     	// Get the row
@@ -96,4 +96,36 @@ public class Game{
     		return true;
     	}
     }
+
+	// Check for a right diagonal
+	int streakR = 0;
+	for(int i = 0; i < game.size(); i++){
+    		
+    	// Check if string equals the selection
+    	if(game.get(i).get(i).equals(selection)){
+    		streakR++;
+    	}
+    }
+    	
+    // Check if the diagonal is a winning pattern
+    if(streakR == game.size()){
+    	return true;
+    }
+    	
+    // Check for a left diagonal
+    int streakL = 0;
+    for(int i = game.size() - 1; i >= 0; i--){
+    		
+    	// Check if string equals the selection
+    	if(game.get(i).get(i).equals(selection)){
+    		streakL++;
+    	}
+    }
+    	
+    // Check if the diagonal is a winning pattern
+    if(streakL == game.size()){
+    	return true;
+    }
+    	
+    return false;
 }
