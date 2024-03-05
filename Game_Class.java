@@ -73,4 +73,27 @@ public class Game{
     	if(streak == row.size()) return true;
 		}
 	}
+
+	// Check for a full column
+    for(int i = 0; i < game.get(0).size(); i++){
+    		
+    	int streak = 0;
+    		
+    	// Loop through each column
+    	for(int v = 0; v < game.size(); v++){
+    			
+    		// Get the column
+    		ArrayList<String> column = game.get(v);
+    			
+    		// Check if string equals the selection
+    		if(column.get(i).equals(selection)){
+    			streak++;
+    		}
+    	}
+    		
+    	// Check if the row is a winning pattern
+    	if(streak == game.size()){
+    		return true;
+    	}
+    }
 }
